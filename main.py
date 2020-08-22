@@ -5,7 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def sendEmail(teamName, going):
-    pass
+    for n in going:
+        print(n)
+    
 
 def getPerson(event, id):
     member = list(filter(lambda x: x['id'] == id, event['recipients']['groups'][0]['members']))[0]
@@ -41,6 +43,6 @@ def load():
         if (diff.days == 1):
             eventToBeSent = spond
             break
-        
+
     send(eventToBeSent)
 load()
